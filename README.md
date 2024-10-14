@@ -14,17 +14,22 @@ This repository is for building an NVIDIA Inference Microservice (NIM) Docker co
    In a seperate terminal, execute a curl request against the locally hosted Docker image:
    ```
    # Linux:
-   curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -d '{"input": [1, 2, 3]}'
+   curl -X POST http://localhost:8000/predict \
+     -H "Content-Type: application/json" \
+     -d '{"input": [1, 2, 3]}'
    ```
    ```
    # Windows PowerShell:
-   Invoke-WebRequest -Uri http://localhost:8000/predict -Method POST -ContentType "application/json" -Body '{"input": [1, 2, 3]}'
+   Invoke-WebRequest `
+    -Uri http://localhost:8000/predict `
+    -Method POST `
+    -ContentType "application/json" `
+    -Body '{"input": [1, 2, 3]}'
    ```
+   **NOTE:** I still need to update the above curl and WebRequest commands to match the manual inference parameters in the official [Stable Fast 3D documentation](https://github.com/Stability-AI/stable-fast-3d?tab=readme-ov-file#manual-inference)
 
 ## Building
-1. Download the Stable Fast 3D model.safetensors file from Huggingface:
-
-   https://huggingface.co/stabilityai/stable-fast-3d
+1. Download the Stable Fast 3D model.safetensors file from Huggingface: [stabilityai/stable-fast-3d](https://huggingface.co/stabilityai/stable-fast-3d)
 
    **NOTE:** The model.safetensors file is over 4 GB in size, which complicates `git push`es to GitHub
 
