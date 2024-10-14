@@ -1,0 +1,10 @@
+Flask
+torch
+torchvision
+numpy
+opencv-python
+PyYAML
+safetensors
+scipy
+scikit-image
+matplotlib
